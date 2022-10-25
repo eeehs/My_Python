@@ -1,4 +1,5 @@
 import random
+from Hangman_words import word_list
 
 stages = ['''
   +---+
@@ -67,222 +68,56 @@ logo = '''
                     __/ |                      
                    |___/    '''
 
-word_list = [
-'abruptly', 
-'absurd', 
-'abyss', 
-'affix', 
-'askew', 
-'avenue', 
-'awkward', 
-'axiom', 
-'azure', 
-'bagpipes', 
-'bandwagon', 
-'banjo', 
-'bayou', 
-'beekeeper', 
-'bikini', 
-'blitz', 
-'blizzard', 
-'boggle', 
-'bookworm', 
-'boxcar', 
-'boxful', 
-'buckaroo', 
-'buffalo', 
-'buffoon', 
-'buxom', 
-'buzzard', 
-'buzzing', 
-'buzzwords', 
-'caliph', 
-'cobweb', 
-'cockiness', 
-'croquet', 
-'crypt', 
-'curacao', 
-'cycle', 
-'daiquiri', 
-'dirndl', 
-'disavow', 
-'dizzying', 
-'duplex', 
-'dwarves', 
-'embezzle', 
-'equip', 
-'espionage', 
-'euouae', 
-'exodus', 
-'faking', 
-'fishhook', 
-'fixable', 
-'fjord', 
-'flapjack', 
-'flopping', 
-'fluffiness', 
-'flyby', 
-'foxglove', 
-'frazzled', 
-'frizzled', 
-'fuchsia', 
-'funny', 
-'gabby', 
-'galaxy', 
-'galvanize', 
-'gazebo', 
-'giaour', 
-'gizmo', 
-'glowworm', 
-'glyph', 
-'gnarly', 
-'gnostic', 
-'gossip', 
-'grogginess', 
-'haiku', 
-'haphazard', 
-'hyphen', 
-'iatrogenic', 
-'icebox', 
-'injury', 
-'ivory', 
-'ivy', 
-'jackpot', 
-'jaundice', 
-'jawbreaker', 
-'jaywalk', 
-'jazziest', 
-'jazzy', 
-'jelly', 
-'jigsaw', 
-'jinx', 
-'jiujitsu', 
-'jockey', 
-'jogging', 
-'joking', 
-'jovial', 
-'joyful', 
-'juicy', 
-'jukebox', 
-'jumbo', 
-'kayak', 
-'kazoo', 
-'keyhole', 
-'khaki', 
-'kilobyte', 
-'kiosk', 
-'kitsch', 
-'kiwifruit', 
-'klutz', 
-'knapsack', 
-'larynx', 
-'lengths', 
-'lucky', 
-'luxury', 
-'lymph', 
-'marquis', 
-'matrix', 
-'megahertz', 
-'microwave', 
-'mnemonic', 
-'mystify', 
-'naphtha', 
-'nightclub', 
-'nowadays', 
-'numbskull', 
-'nymph', 
-'onyx', 
-'ovary', 
-'oxidize', 
-'oxygen', 
-'pajama', 
-'peekaboo', 
-'phlegm', 
-'pixel', 
-'pizazz', 
-'pneumonia', 
-'polka', 
-'pshaw', 
-'psyche', 
-'puppy', 
-'puzzling', 
-'quartz', 
-'queue', 
-'quips', 
-'quixotic', 
-'quiz', 
-'quizzes', 
-'quorum', 
-'razzmatazz', 
-'rhubarb', 
-'rhythm', 
-'rickshaw', 
-'schnapps', 
-'scratch', 
-'shiv', 
-'snazzy', 
-'sphinx', 
-'spritz', 
-'squawk', 
-'staff', 
-'strength', 
-'strengths', 
-'stretch', 
-'stronghold', 
-'stymied', 
-'subway', 
-'swivel', 
-'syndrome', 
-'thriftless', 
-'thumbscrew', 
-'topaz', 
-'transcript', 
-'transgress', 
-'transplant', 
-'triphthong', 
-'twelfth', 
-'twelfths', 
-'unknown', 
-'unworthy', 
-'unzip', 
-'uptown', 
-'vaporize', 
-'vixen', 
-'vodka', 
-'voodoo', 
-'vortex', 
-'voyeurism', 
-'walkway', 
-'waltz', 
-'wave', 
-'wavy', 
-'waxy', 
-'wellspring', 
-'wheezy', 
-'whiskey', 
-'whizzing', 
-'whomever', 
-'wimpy', 
-'witchcraft', 
-'wizard', 
-'woozy', 
-'wristwatch', 
-'wyvern', 
-'xylophone', 
-'yachtsman', 
-'yippee', 
-'yoked', 
-'youthful', 
-'yummy', 
-'zephyr', 
-'zigzag', 
-'zigzagging', 
-'zilch', 
-'zipper', 
-'zodiac', 
-'zombie', 
-]
+# blank = " ".join(blank_word)
+# 빈 값 리스트 만들기
+blank_word = []
+
+def generate_blanks():
+  for i in range(len(random_word)):
+    blank_word.append("_")
+
+
+
+# 단어가 맞았는지 틀렸는지 확인 여부 
+
+# 랜덤으로 단어 선택
+random_word = random.choice(word_list)
+random_word_list = list(random_word)
+
+generate_blanks()
 
 print(f"""
     {logo}
 """)
+life = 6
+while True:
+
+  Guess_letter = input("Guess a letter: ")
+
+  for i in range(len(random_word)):
+    
+    if random_word_list[i] == Guess_letter:
+      if blank_word[i] == Guess_letter:
+        print(f"You've already guessed {Guess_letter}.")
+      blank_word[i] = Guess_letter
+      
+      
+    elif Guess_letter not in random_word_list: 
+      print(f"you  guessed {Guess_letter}, that's not in the word. You lose a life")
+      life = life - 1
+      break
+
+  print(" ".join(blank_word))
+  
+  print(stages[life])
+  if "_" not in blank_word:
+    print("you win!!")
+    break
+  if life == 0:
+    print("you die")
+    break
+
+
+
+
+  
