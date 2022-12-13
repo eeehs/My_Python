@@ -6,8 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def index(request):
-    user = Users.objects.filter(username="admin").first()
+    user = Users.objects.filter(id=request.user.id).first()
     email = user.email if user else "Anonymous User!"
+    print("Logged in?",request.user.is_authenticated)
     return render(request, "base.html",{"welcome_msg":"Hello FastCampus!"})
 
 
