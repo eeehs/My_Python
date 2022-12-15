@@ -14,11 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from shortener.views import get_user,index
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",index, name="index"),
     path("get_user/<int:user_id>", get_user),
 ]
+
+if settings.DEBUG:
+    if "debug_toolbar" in settings.INSTALLED_APPS:
+        import debug_toolbar
+        urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
