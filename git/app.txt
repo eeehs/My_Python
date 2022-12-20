@@ -5,6 +5,10 @@
     git branch (이름)
 - branch switch
     git switch (이름)
+- branch merge
+    기준이 되는 branch로 이동 후, git merge (브랜치명)
+
+- 충돌 해결은 코드고치고 git add & git commit
 
 
 지금 이 app.txt는 main branch입니다...
