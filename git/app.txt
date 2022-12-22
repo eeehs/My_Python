@@ -32,6 +32,9 @@
     git push -u 원격저장소주소 올릴로컬브랜치명
     => 한번 이렇게 적으면 다음에는 그냥 git push 하면된다. 
 
+- 원격저장소 pull
+    git pull 원격저장소주소 브랜치명 
+
 지금 이 app.txt는 main branch입니다...
 
 자 이것은 테스트 입니다.
