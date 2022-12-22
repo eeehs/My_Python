@@ -10,5 +10,19 @@
 
 - 충돌 해결은 코드고치고 git add & git commit
 
+- rebase 쓰는 이유
+    - 3-way merge는 나중에 git log를 출력할 때 복잡해보임
+    - 간단하고 짧은 브랜치들은 rebase를 사용하면 깔끔해보임
+
+- rebase 단점
+    - conflict가 많이 발생함. 
+
+- rebase & merge 방법
+    1. 새로운 브랜치로 이동
+    2. git rebase (중심브랜치명)
+    3. 중심 브랜치로 이동
+    4. git merge (새로운 브랜치명)
 
 지금 이 app.txt는 main branch입니다...
+
+자 이것은 테스트 입니다.
