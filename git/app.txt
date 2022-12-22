@@ -28,6 +28,9 @@
 - 과거로 모든걸 되돌리기
     git reset --hard 커밋아이디
 
+- 원격저장소 push
+    git push -u 원격저장소주소 올릴로컬브랜치명
+
 지금 이 app.txt는 main branch입니다...
 
 자 이것은 테스트 입니다.
