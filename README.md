@@ -1,3 +1,3 @@
-# Python-web-development
+# Web-development-Practice
 
-파이썬 웹 개발을 연습하는 저장소입니다. 
+웹 개발을 연습하는 저장소입니다. 
