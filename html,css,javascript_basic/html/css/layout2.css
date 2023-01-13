@@ -1,3 +1,9 @@
+div,input,textarea {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+}
 .main-background {
     width: 100%;
     height: 500px;
@@ -21,6 +27,73 @@
 }
 
 .main-background button{
+    padding: 15px;
+    font-size: 15px;
+    background: white;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 150px;
+}
 
-    margin-left: 480px;
+.slave {
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    background: gainsboro;
+    position: relative;
+    margin: auto;
+    bottom: 60px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.slave div {
+    padding: 30px;
+}
+
+input[type=password] {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid black ;
+    border-radius: 5px;
+}
+
+.form-background{
+    background-color: black;
+    padding: 30px;
+}
+
+.form-white {
+    background-color: white;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-input {
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+
+.w-100{
+    width: 100%;
+    padding: 10px;
+}
+.w-50 {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+.yellow-button {
+    padding: 10px;
+    
+
 }

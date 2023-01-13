@@ -1,0 +1,22 @@
+.main {
+    margin: 60px;
+}
+.Firstname {
+    float: left;
+    width: 50%;
+}
+.Lastname {
+    float: left;
+    width: 50%;
+}
+.button {
+    background-color: goldenrod;
+    border-color: goldenrod;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    float: right;
+    margin-right: 34px;
+}
