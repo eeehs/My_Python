@@ -1,4 +1,10 @@
-파일 현재 상태를 기록해두려면
-git add 파일명
-git commit -m '메모'
+- 파일 현재 상태를 기록해두려면
+    git add 파일명
+    git commit -m '메모'
+- branch 생성
+    git branch (이름)
+- branch switch
+    git switch (이름)
 
+
+지금 이 app.txt는 main branch입니다. 
