@@ -7,4 +7,4 @@
     git switch (이름)
 
 
-지금 이 app.txt는 main branch입니다. 
+지금 이 app.txt는 main branch입니다...
