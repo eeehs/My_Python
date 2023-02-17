@@ -7,6 +7,8 @@
     git switch (이름)
 - branch merge
     기준이 되는 branch로 이동 후, git merge (브랜치명)
+- 현재 branch의 이름 변경
+    git branch -M (변경할 이름)
 
 - 충돌 해결은 코드고치고 git add & git commit
 
@@ -22,6 +24,9 @@
     2. git rebase (중심브랜치명)
     3. 중심 브랜치로 이동
     4. git merge (새로운 브랜치명)
+
+- 과거로 모든걸 되돌리기
+    git reset --hard 커밋아이디
 
 지금 이 app.txt는 main branch입니다...
 
